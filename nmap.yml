@@ -1,4 +1,4 @@
 # inventory.config file in YAML format
 plugin: community.general.nmap
 strict: false
-address: 192.168.0.0/24
+address: 172.31.0.0/28
