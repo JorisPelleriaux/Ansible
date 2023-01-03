@@ -1,4 +1,7 @@
-# inventory.config file in YAML format
-plugin: community.general.nmap
-strict: false
-address: 172.31.0.0/28
+- name: Nmap-scan
+  hosts: all
+  tasks:
+    - name: Scan subnet
+      plugin: community.general.nmap
+      strict: false
+      address: 172.31.0.0/28
