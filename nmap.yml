@@ -1,7 +1,11 @@
-- name: Nmap-scan
-  hosts: all
+---
+- name: Scan network for open ports
+  hosts: localhost
   tasks:
-    - name: Scan subnet
-      plugin: community.general.nmap
-      strict: false
-      address: 172.31.0.0/28
+  - name: Scan network
+    community.general.nmap:
+      scan_type: SYN
+      target: 172.31.0.0/28
+    register: scan_result
+  - debug:
+      var: scan_result
